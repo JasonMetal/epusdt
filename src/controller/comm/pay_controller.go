@@ -25,6 +25,16 @@ func (c *BaseCommController) CheckoutCounter(ctx echo.Context) (err error) {
 }
 
 // CheckStatus 支付状态检测
+
+//	{
+//	 "status_code": 200,
+//	 "message": "success",
+//	 "data": {
+//	   "trade_id": "202404121712891026186207",
+//	   "status": 1
+//	 },
+//	 "request_id": "5a43f576-490e-4ea1-9228-da0b1aee524b"
+//	}
 func (c *BaseCommController) CheckStatus(ctx echo.Context) (err error) {
 	tradeId := ctx.Param("trade_id")
 	order, err := service.GetOrderInfoByTradeId(tradeId)

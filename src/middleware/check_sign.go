@@ -24,6 +24,7 @@ func CheckApiSign() echo.MiddlewareFunc {
 				return constant.SignatureErr
 			}
 			checkSignature, err := sign.Get(m, config.GetApiAuthToken())
+			println("ch", checkSignature)
 			if err != nil {
 				return constant.SignatureErr
 			}
